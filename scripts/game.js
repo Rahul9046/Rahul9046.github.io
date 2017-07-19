@@ -2,7 +2,13 @@
 
 (function(){
     //creation of UI elements and variables which will be used throughout the program.
-    var paper=new R_svg("container",1270,650),buttons=[],sequence=[],checking=[],game_tout,count=1,audios=[],game_running=0,
+    /* 
+      game states{
+        0:"new game session,user clicked start button for the 1st time in the new session"
+        1:"game running,user clicked the start button for one or more times"
+      }
+    */
+    var paper=new R_svg("container",1270,650),buttons=[],sequence=[],checking=[],button_flash_timeouts=[],count_text_timeout=[],game_tout,count=1,audios=[],game_state=0,
         pallete1=["darkred","forestgreen","goldenrod","indigo"],
         pallete2=["#ff3333","springgreen","#ffff66","mediumslateblue"];
         bg_image=paper.img(-297,0,1270,650,"images/Background.png").attr({"scale":[1.9,1]});
@@ -111,7 +117,7 @@
                     stopGame();
                     setTimeout(function(){
                     alert("Congo!!! You Have Won....Press Start to play again");
-                    game_running=0;
+                    game_state=0;
                     },600);
                     }
                     else{
@@ -141,8 +147,8 @@
                     else{ // contains value from the previous sequence
                         r_btn_num=sequence[i];
                     }
-                    (function(j,k){                    
-                        setTimeout(function(){
+                    (function(j,k,timeouts){                    
+                      button_flash_timeouts[k]=setTimeout(function(){
                         if(switch_btn.dataset.mode==1){ 
                         audios[j].play();
                         count_value.innerHTML=count>9?count:"0"+count;
@@ -167,7 +173,7 @@
                         }
                         },1400+1500*k);//1200ms for the count display flash,200ms wait time after the buttons start flashing,   
                                     //1500*k is the wait time for button in the sequence after which it flashes for 600ms(k=0 to 3).
-                    })(r_btn_num,i);
+                    })(r_btn_num,i,button_flash_timeouts);
                     }
                 });
     var stopGame=(function(){  //called when the game finishes or the user stops the game from the stop button
@@ -209,7 +215,7 @@
         else{
             switch_btn.setAttribute("x",Number(switch_btn.getAttribute("x"))-20);   
             switch_btn.dataset.mode=0;
-            game_running=0;
+            game_state=0;
             stopGame();
         }    
     });
@@ -219,8 +225,11 @@
         setTimeout(function(){
         start_btn.setAttribute("r",13);
         },100);
-        if(!game_running){//avoids multiple start button click interference for a game session.
-            game_running=1;
+        if(!game_state){//checks if the start button is clicked between gameplay 
+            game_state=1;
+            button_flash_timeouts.forEach(function(item){
+             clearTimeout(item);
+            });
             if(switch_btn.dataset.mode==1){ //execute only if the button start button is set to ON.
                 count_value.attr({"fill":["red"]});
                 setTimeout(function(){
@@ -239,6 +248,31 @@
                 startGame();
                 },1200);
             }
+        }
+        else{  // start button is pressed one or more times between game play  
+            button_flash_timeouts.forEach(function(item){ //clears initial timeouts of the button flashes
+             clearTimeout(item);
+            });
+            count_text_timeout.forEach(function(item){  //clears initial timeouts of the count text flashes
+             clearTimeout(item);
+            });
+            
+            stopGame();
+            count_text_timeout[0]=setTimeout(function(){
+            count_value.attr({"fill":["brown"]});
+            },100);
+            count_text_timeout[1]=setTimeout(function(){
+            count_value.attr({"fill":["red"]});
+            },400);
+            count_text_timeout[2]=setTimeout(function(){
+            count_value.attr({"fill":["brown"]});
+            },700);
+            count_text_timeout[3]=setTimeout(function(){
+            count_value.attr({"fill":["red"]});
+            },1000);
+            count_text_timeout[4]=setTimeout(function(){
+            startGame();
+            },1200);
         }
     });
 
