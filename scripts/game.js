@@ -94,9 +94,9 @@ for(var i=0;i<4;i++){
                 game_tout=setTimeout(function(){
                 start_again(strict_mode);  
                 },5000);
-                }
+            }
             else{
-                if(count_value.innerHTML==="10"){
+                if(count_value.innerHTML==="20"){
                    stopGame();
                    setTimeout(function(){
                    alert("Congo!!! You Have Won....Press Ok to start again");
@@ -107,9 +107,9 @@ for(var i=0;i<4;i++){
                     element.dataset.clickable=false; 
                     });
                     startGame();
-                    }
-                } 
-            }  
+                }
+            } 
+        }  
             else{
                 start_again(strict_mode);
                 }
@@ -128,8 +128,9 @@ var startGame=(function(){
                   else{
                       r_btn_num=sequence[i];
                   }
-                  (function(j,k){
-                      setTimeout(function(){
+                  (function(j,k){                    
+                    setTimeout(function(){
+                    if(switch_btn.dataset.mode==1){ 
                       count_value.innerHTML=count>9?count:"0"+count;
                       if(k===(count-1)){
                         var index=0;
@@ -148,7 +149,8 @@ var startGame=(function(){
                        setTimeout(function(){
                        buttons[j].attr({"fill":[pallete1[j]]});
                        },600);
-                       },1400+1500*k);
+                    }
+                    },1400+1500*k);   
                   })(r_btn_num,i);
                  }
              });
