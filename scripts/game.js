@@ -154,12 +154,12 @@ var startGame=(function(){ // gets executed for every new sequence
                        buttons[j].attr({"fill":[pallete1[j]]});
                        },600);
                     }
-                    },1400+1500*k);//1200ms for the count display flash,200ms wait time after the buttons start flashing,   
+                    },1400+1500*k);//1200ms for the count display flash,200ms wait time before the sequence starts flashing,   
                                    //1500*k is the wait time for button in the sequence after which it flashes for 600ms(k=0 to 3).
                   })(r_btn_num,i);
                  }
              });
-var stopGame=(function(){  //called when the game finishes or the user stops the game from the stop button
+var stopGame=(function(){  //called when the game finishes or the user stops the game from the ON/OFF button
      count_value.innerHTML="- -";
      count_value.attr({"fill":["brown"]}); 
      sequence=[];
@@ -173,8 +173,8 @@ var stopGame=(function(){  //called when the game finishes or the user stops the
     strict_btn.dataset.mode=0; 
     });
 
-switch_btn.setAttribute("data-mode",0);// modes for switch button:0-off,1-on
-strict_btn.setAttribute("data-mode",0);// modes for strict button:0-non-strict,1-strict
+switch_btn.setAttribute("data-mode",0);// modes for switch button:0:-OFF,1:-ON
+strict_btn.setAttribute("data-mode",0);// modes for strict button:0:-non-strict,1:-strict
 
 switch_btn.click(function(){ //toggles ON/OFF button
     if(switch_btn.dataset.mode==="0"){
