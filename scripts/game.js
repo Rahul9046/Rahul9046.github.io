@@ -140,8 +140,8 @@
     var startGame=(function(){ // gets executed for every new sequence
                     var r_btn_num;// stores the random button number generated 
                     for(var i=0;i<count;i++){
-                    if(!sequence[i]){//empty value at that index
-                        r_btn_num=Math.ceil(Math.random()*3);
+                    if(sequence[i]==null){//empty value at that index
+                        r_btn_num=Math.floor(Math.random()*4);
                         sequence.push(r_btn_num);
                     }
                     else{ // contains value from the previous sequence
