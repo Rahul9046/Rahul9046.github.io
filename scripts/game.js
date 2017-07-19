@@ -250,29 +250,31 @@
             }
         }
         else{  // start button is pressed one or more times between game play  
-            button_flash_timeouts.forEach(function(item){ //clears initial timeouts of the button flashes
-             clearTimeout(item);
-            });
-            count_text_timeout.forEach(function(item){  //clears initial timeouts of the count text flashes
-             clearTimeout(item);
-            });
-            
-            stopGame();
-            count_text_timeout[0]=setTimeout(function(){
-            count_value.attr({"fill":["brown"]});
-            },100);
-            count_text_timeout[1]=setTimeout(function(){
-            count_value.attr({"fill":["red"]});
-            },400);
-            count_text_timeout[2]=setTimeout(function(){
-            count_value.attr({"fill":["brown"]});
-            },700);
-            count_text_timeout[3]=setTimeout(function(){
-            count_value.attr({"fill":["red"]});
-            },1000);
-            count_text_timeout[4]=setTimeout(function(){
-            startGame();
-            },1200);
+            if(switch_btn.dataset.mode==1){ 
+                button_flash_timeouts.forEach(function(item){ //clears initial timeouts of the button flashes
+                clearTimeout(item);
+                });
+                count_text_timeout.forEach(function(item){  //clears initial timeouts of the count text flashes
+                clearTimeout(item);
+                });
+                
+                stopGame();
+                count_text_timeout[0]=setTimeout(function(){
+                count_value.attr({"fill":["brown"]});
+                },100);
+                count_text_timeout[1]=setTimeout(function(){
+                count_value.attr({"fill":["red"]});
+                },400);
+                count_text_timeout[2]=setTimeout(function(){
+                count_value.attr({"fill":["brown"]});
+                },700);
+                count_text_timeout[3]=setTimeout(function(){
+                count_value.attr({"fill":["red"]});
+                },1000);
+                count_text_timeout[4]=setTimeout(function(){
+                startGame();
+                },1200);
+           }
         }
     });
 
