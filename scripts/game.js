@@ -2,7 +2,7 @@
 
 (function(){
     //creation of UI elements and variables which will be used throughout the program.
-    var paper=new R_svg("container",1270,650),buttons=[],sequence=[],checking=[],game_tout,count=1,
+    var paper=new R_svg("container",1270,650),buttons=[],sequence=[],checking=[],game_tout,count=1,audios=[],game_running=0,
         pallete1=["darkred","forestgreen","goldenrod","indigo"],
         pallete2=["#ff3333","springgreen","#ffff66","mediumslateblue"];
         bg_image=paper.img(-297,0,1270,650,"images/Background.png").attr({"scale":[1.9,1]});
@@ -31,8 +31,13 @@
         count_text=paper.text(512,387,"COUNT").attr({"text-anchor":"start","font-family":"Zamyatin","font-size":15}),
         start_text=paper.text(600,387,"START").attr({"text-anchor":"middle","font-family":"Zamyatin","font-size":15}),
         strict_text=paper.text(660,387,"STRICT").attr({"text-anchor":"middle","font-family":"Zamyatin","font-size":15}); 
-
-
+    
+    //audio files
+    audios[0]=document.getElementById("soundbuttonRed");
+    audios[1]=document.getElementById("soundbuttonGre");    
+    audios[2]=document.getElementById("soundbuttonYel");
+    audios[3]=document.getElementById("soundbuttonBlu");
+    audios[4]=document.getElementById("soundbuttonWrong");
     var start_again=(function(){ //called when the user does any error or when the timeout finishes
         buttons.forEach(function(element){
                         element.dataset.clickable=false; //user cannot click the buttons when the sequence is flashing
@@ -88,7 +93,8 @@
             buttons[j].setAttribute("data-number",i);//setting each button's identifier(0-4)
             buttons[j].click(function(){   //assining click handler on each button.  
             if(this.dataset.clickable==="true"){ //handler gets executed only if its clickable property is true.
-                if(this.dataset.number==checking.shift()){//matching the button clicked with the sequence
+              if(this.dataset.number==checking.shift()){//matching the button clicked with the sequence
+                audios[this.dataset.number].play();
                 this.attr({"fill":[pallete2[j]]});
                 setTimeout(function(){
                 buttons[j].attr({"fill":[pallete1[j]]});
@@ -96,6 +102,7 @@
                 clearTimeout(game_tout);
                 if(checking.length!==0){//sequence is still left.
                     game_tout=setTimeout(function(){
+                    audios[4].play();
                     start_again();  
                     },5000);
                 }
@@ -104,6 +111,7 @@
                     stopGame();
                     setTimeout(function(){
                     alert("Congo!!! You Have Won....Press Start to play again");
+                    game_running=0;
                     },600);
                     }
                     else{
@@ -113,8 +121,9 @@
                         startGame();//start new level of n buttons with the first (n-1) buttons similar to last sequence.
                     }
                 } 
-                }  
+              }  
                 else{
+                    audios[4].play();
                     start_again(); //shows error and starts again in the same level(non-strict) or 1st level(strict).
                 }
             }        
@@ -135,6 +144,7 @@
                     (function(j,k){                    
                         setTimeout(function(){
                         if(switch_btn.dataset.mode==1){ 
+                        audios[j].play();
                         count_value.innerHTML=count>9?count:"0"+count;
                         if(k===(count-1)){
                             var index=0;
@@ -146,6 +156,7 @@
                             checking[index++]=elem;
                             });
                             game_tout=setTimeout(function(){ //creating timeout for a sequence.gets reseted after each correct click.
+                            audios[4].play();
                             start_again();    
                             },5000);
                         }
@@ -198,6 +209,7 @@
         else{
             switch_btn.setAttribute("x",Number(switch_btn.getAttribute("x"))-20);   
             switch_btn.dataset.mode=0;
+            game_running=0;
             stopGame();
         }    
     });
@@ -207,24 +219,26 @@
         setTimeout(function(){
         start_btn.setAttribute("r",13);
         },100);
-        
-        if(switch_btn.dataset.mode==1){ //execute only if the button start button is set to ON.
-            count_value.attr({"fill":["red"]});
-            setTimeout(function(){
-            count_value.attr({"fill":["brown"]});
-            },100);
-            setTimeout(function(){
-            count_value.attr({"fill":["red"]});
-            },400);
-            setTimeout(function(){
-            count_value.attr({"fill":["brown"]});
-            },700);
-            setTimeout(function(){
-            count_value.attr({"fill":["red"]});
-            },1000);
-            setTimeout(function(){
-            startGame();
-            },1200);
+        if(!game_running){//avoids multiple start button click interference for a game session.
+            game_running=1;
+            if(switch_btn.dataset.mode==1){ //execute only if the button start button is set to ON.
+                count_value.attr({"fill":["red"]});
+                setTimeout(function(){
+                count_value.attr({"fill":["brown"]});
+                },100);
+                setTimeout(function(){
+                count_value.attr({"fill":["red"]});
+                },400);
+                setTimeout(function(){
+                count_value.attr({"fill":["brown"]});
+                },700);
+                setTimeout(function(){
+                count_value.attr({"fill":["red"]});
+                },1000);
+                setTimeout(function(){
+                startGame();
+                },1200);
+            }
         }
     });
 
