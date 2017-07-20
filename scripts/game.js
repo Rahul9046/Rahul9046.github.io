@@ -8,10 +8,9 @@
         1:"game running,user clicked the start button for one or more times"
       }
     */
-    var paper=new R_svg("container",1270,650),buttons=[],sequence=[],checking=[],button_flash_timeouts=[],count_text_timeout=[],game_tout,count=1,audios=[],game_state=0,
+    var paper=new R_svg("container",window.innerWidth,window.innerHeight),buttons=[],sequence=[],checking=[],button_flash_timeouts=[],count_text_timeout=[],game_tout,count=1,audios=[],game_state=0,
         pallete1=["darkred","forestgreen","goldenrod","indigo"],
         pallete2=["#ff3333","springgreen","#ffff66","mediumslateblue"];
-        bg_image=paper.img(-297,0,1270,650,"images/Background.png").attr({"scale":[1.9,1]});
         bg_circle=paper.circle(600,330,230).attr({"fill":["#282828"],"blur":2}),
         buttons[0]=paper.path("M720,330 L810,330 A210,210 0 0,0 600,120"+ 
                             "L600,210 A120,120 0 0,1 720,330").attr({"fill":[pallete1[0]],"stroke":["#282828",15]}),
