@@ -74,7 +74,7 @@ p#count_text{
 div#container{
         width:100%;
         height:100%;
-        background-image: url(images/Background.png); 
+        background-image: url(../images/Background.png); 
     }
 #simon_text{
     position:relative;
