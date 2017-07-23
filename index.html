@@ -1,36 +1,39 @@
 <html>
     <head>
-        <style>
-            @font-face {
-                  font-family: Zamyatin; 
-                  src: url('fonts/Zamyatin.ttf');
-                 }
-             @font-face {
-                  font-family: BitmapWide; 
-                  src: url('fonts/BitmapWide.ttf');
-                 }
-             @font-face {
-                  font-family: Ultra; 
-                  src: url('fonts/Ultra.ttf');
-                 }
-               div{
-                   background-image: url(images/Background.png); 
-                   user-select: none;
-                   
-                  }
-            body{
-                overflow: hidden;
-               }
-        </style>
-        <script src="scripts/R_svg.js"></script>
-        <script defer src="scripts/game.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet">
+        <link rel = "stylesheet" type = "text/css" href = "simon.css" />
+        <script defer src="game.js"></script>
     </head>
     <body>
-        <audio id="soundbuttonGre" src="https://s3.amazonaws.com/freecodecamp/simonSound1.mp3"></audio>
-        <audio id="soundbuttonRed" src="https://s3.amazonaws.com/freecodecamp/simonSound2.mp3"></audio>
-        <audio id="soundbuttonYel" src="https://s3.amazonaws.com/freecodecamp/simonSound3.mp3"></audio>
-        <audio id="soundbuttonBlu" src="https://s3.amazonaws.com/freecodecamp/simonSound4.mp3"></audio>
-        <audio id="soundbuttonWrong" src="http://www.freesound.org/data/previews/331/331912_3248244-lq.mp3"></audio>
-        <div id="container"></div>
+        <audio id="audio0" src="sounds/red.mp3"></audio>
+        <audio id="audio1" src="sounds/green.mp3"></audio>
+        <audio id="audio2" src="sounds/yellow.mp3"></audio>
+        <audio id="audio3" src="sounds/blue.mp3"></audio>
+        <audio id="audio4" src="http://www.freesound.org/data/previews/331/331912_3248244-lq.mp3"></audio>
+        <div id="container">
+            <div id="button-parent">
+                <button id="button1" data-clickable="false" data-number="1"></button>
+                <button id="button0" data-clickable="false" data-number="0"></button></br>
+                <button id="button2" data-clickable="false" data-number="2"></button>
+                <button id="button3" data-clickable="false" data-number="3"></button>
+                <div id="display">
+                    <p id="simon_text">Simon<span id="reg_trademark">&reg;</span></p>
+                    <input id="count_disp" type="text" value=" - -" disabled/>
+                    <p id="count_text">COUNT</p>
+                    <button id="start"></button>
+                    <button id="strict" data-mode="0"></button>
+                    <button id="strict_indicator"></button>
+                    <p id="start_text">START</p>
+                    <p id="strict_text">STRICT</p>
+                    <span id="off_text">OFF</span>
+                    <div id="toggle_bg">
+                        <button id="toggle_btn" data-mode="0"></button>
+                    </div>
+                    <span id="on_text">ON</span>
+                </div>
+            </div>
+        </div>
     </body>
-<html>
+</html>
