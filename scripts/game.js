@@ -2,13 +2,16 @@
     var pallete1=["#9F0F18","#00A64B","#CDA609","#094A8E"],
         pallete2=["#ff3333","#00FF7F","#ffff66","#7B68EE"],
         sequence=[],checking=[],buttons=[],audios=[],button_flash_timeouts=[],count_text_timeout=[],game_tout,current_flash,game_state=0,count=1;
-
-    function Button(element,number){
+     /*game states{
+        0:"new game session,user clicked start button for the 1st time in the new session"
+        1:"game running,user clicked the start button for one or more times"
+      }*/
+    function Button(element,number){  //Button constructor
     this.element=element;
     this.initial_fill=pallete1[number];
     this.click_fill=pallete2[number];
     }
-    Button.prototype.click=function(){
+    Button.prototype.click=function(){  //click event handler for each button.
         if(this.dataset.clickable==="true"){ 
             if(this.dataset.number==checking.shift()){
             audios[this.dataset.number].play();
