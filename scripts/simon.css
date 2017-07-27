@@ -9,24 +9,24 @@ body {
     -moz-user-select: none;
     -ms-user-select: none;
     -webkit-user-select: none;
-    outline: none;
-}
-button::-moz-focus-inner {
-  border: 0;
+    
 }
 
-button#button1{
+div#button1{
         width:20vw;
         height:20vw;
+        position:absolute;
+        top:0.2vw;
         background-color:#00A64B;
         border:1.5vw solid #343438;
         border-radius:100% 0px 0px 0px; 
         box-shadow: 0px 0px 2vw #343438;
         }
         
-button#button0{
+div#button0{
     position:absolute;
-    left:20vw;
+    left:22.5vw;
+    top:0.2vw;
     width:20vw;
     height:20vw;
     background-color:#9F0F18;
@@ -34,7 +34,9 @@ button#button0{
     border-radius:0px 100% 0px 0px; 
     box-shadow: 0px 0px 2vw #343438;
     }
-button#button2{
+div#button2{
+    position: absolute;
+    top:23vw;
     width:20vw;
     height:20vw;
     background-color:#CDA609;
@@ -42,9 +44,10 @@ button#button2{
     border-radius:0px 0px 0px 100%;
     box-shadow: 0px 0px 2vw #343438; 
     }
-button#button3{
+div#button3{
     position:absolute;
-    /*left:95%;*/
+    top:23vw;
+    left:22.5vw;
     width:20vw;
     height:20vw;
     background-color:#094A8E;
@@ -61,19 +64,19 @@ div#button-parent{
 
 div#display{
     position: absolute;
-    width:18vw;
-    height:18vw;
+    width:21vw;
+    height:21vw;
     background-color: white;
     border:1.5vw solid #343438;
-    left:9.5vw;
-    top:9.7vw;
+    left:10.5vw;
+    top:11vw;
     border-radius: 100% 100% 100% 100%; 
     }   
 p#count_text{
     font-family:Oswald;
     font-size: 1vw;
     left:3.2vw;
-    top:-5vw;
+    top:-4.4vw;
     position: relative;
 
 }
@@ -85,7 +88,7 @@ div#container{
    
 #simon_text{
     position:relative;
-    left:2vw;
+    left:3vw;
     top:0vw;
     font-size:4vw;
     font-family:Alfa Slab One;
@@ -112,18 +115,18 @@ div#container{
     font-family: VT323;
 }
 
-button#start{
+div#start{
     width:2.4vw;
     height:2.4vw;
     position: relative;
-    left:8.5vw;
-    top:-10vw;
+    left:9vw;
+    top:-10.3vw;
     border-radius: 100% 100% 100% 100%; 
     border:0.4vw solid #343438;
     background: #CB151F;
     box-shadow: 0.3vw 0.3vw 0.5vw #343438;
 }
-button#start:active{
+div#start:active{
     transform:translateY(0.2vw);
     box-shadow: none;
 }
@@ -131,8 +134,8 @@ button#start:active{
 p#start_text{
     font-family:Oswald;
     font-size: 1vw;
-    left:8.6vw;
-    top:-10.8vw;
+    left:9.3vw;
+    top:-14.9vw;
     position: relative;
 
 }
@@ -140,32 +143,32 @@ p#strict_text{
     font-family:Oswald;
     font-size: 1vw;
     position: relative;
-    left:12.2vw;
-    top:-13.3vw;
+    left:15.3vw;
+    top:-17.5vw;
 
 }
 
-button#strict{
+div#strict{
     width:2.4vw;
     height:2.4vw;
     position: relative;
-    left:9.5vw;
-    top:-10vw;
+    left:15vw;
+    top:-13.5vw;
     border-radius: 100% 100% 100% 100%; 
     border:0.4vw solid #343438;
     background: #F9FF02;
     box-shadow: 0.3vw 0.3vw 0.5vw #343438;
 } 
-button#strict:active{
+div#strict:active{
     transform:translateY(0.2vw);
     box-shadow: none;
 }
-button#strict_indicator{
-    width:1vw;
-    height:1vw;
+div#strict_indicator{
+    width:0.8vw;
+    height:0.8vw;
     position: relative;
-    left:7.5vw;
-    top:-12.2vw;
+    left:16.3vw;
+    top:-17.7vw;
     border-radius: 100% 100% 100% 100%; 
     background: black;
     border:none;
@@ -176,19 +179,19 @@ div#toggle_bg{
     height:1.6vw;
     background-color:#343438;
     position:relative;
-    left:7vw;
-    top:-14.7vw;
+    left:9vw;
+    top:-18vw;
     border-radius:0.2vw;
 }
 
-button#toggle_btn{
+div#toggle_btn{
     width:1.2vw;
     height:1.2vw;
     background-color:#5489C7;
     position:relative;
     border-radius:0.3px;
     border:none;
-    margin: 0px 5px;
+    margin: 0vw 0.5vw;
     top:0.2vw;
     float:left; 
 }
@@ -196,8 +199,8 @@ button#toggle_btn{
 span#off_text{
     font-family:Oswald;
     font-size: 1vw;
-    left:5.3vw;
-    top:-13.2vw;
+    left:7vw;
+    top:-16.5vw;
     position: relative;
 
 }
@@ -205,7 +208,7 @@ span#on_text{
     font-family:Oswald;
     font-size: 1vw;
     position: relative;
-    left:11.3vw;
-    top:-16.3vw;
+    left:13.5vw;
+    top:-19.6vw;
 
 }
