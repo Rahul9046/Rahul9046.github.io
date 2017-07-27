@@ -7,11 +7,27 @@
         <script defer src="scripts/game.js"></script>
     </head>
     <body>
-        <audio id="audio0" src="sounds/red.mp3"></audio>
-        <audio id="audio1" src="sounds/green.mp3"></audio>
-        <audio id="audio2" src="sounds/yellow.mp3"></audio>
-        <audio id="audio3" src="sounds/blue.mp3"></audio>
-        <audio id="audio4" src="sounds/error.mp3"></audio>
+        <audio id="audio0">
+        <source src="sounds/red.ogg" type="audio/ogg">
+        <source src="sounds/red.mp3" type="audio/mpeg">
+        </audio> 
+        <audio id="audio1">
+        <source src="sounds/green.ogg" type="audio/ogg">
+        <source src="sounds/green.mp3" type="audio/mpeg">
+        </audio>
+        <audio id="audio2">
+        <source src="sounds/yellow.ogg" type="audio/ogg">
+        <source src="sounds/yellow.mp3" type="audio/mpeg">
+        </audio>
+        <audio id="audio3">
+        <source src="sounds/blue.ogg" type="audio/ogg">
+        <source src="sounds/blue.mp3" type="audio/mpeg">
+        </audio>
+        <audio id="audio4">
+        <source src="sounds/error.ogg" type="audio/ogg">
+        <source src="sounds/error.mp3" type="audio/mpeg">
+        </audio>
+        
         <div id="container">
             <div id="button-parent">
                 <button id="button1" data-clickable="false" data-number="1"></button>
