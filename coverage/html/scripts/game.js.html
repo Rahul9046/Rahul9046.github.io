@@ -1,0 +1,905 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for scripts/game.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">all files</a> / <a href="index.html">scripts/</a> game.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">95.56% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>172/180</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">78.95% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>30/38</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">91.49% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>43/47</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">95.56% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>172/180</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">36×</span>
+<span class="cline-any cline-yes">36×</span>
+<span class="cline-any cline-yes">36×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">20×</span>
+<span class="cline-any cline-yes">20×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-yes">32×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">var pallete1 = ['#9F0F18', '#00A64B', '#CDA609', '#094A8E'];
+var pallete2 = ['#ff3333', '#00FF7F', '#ffff66', '#7B68EE'];
+var sequence = [];
+var checking = [];
+var buttons = [];
+var audios = [];
+var buttonFlashTimeouts = [];
+var countTextTimeout = [];
+var gameTout;
+var gameState;
+var count = 1;
+ var btnClick = function (audios) {
+        var checkClick = arguments[1];
+        <span class="missing-if-branch" title="else path not taken" >E</span>if (this.dataset.clickable === 'true') {
+            if (this.dataset.number == checking.shift() || checkClick == 1) {
+            audios[this.dataset.number].play();
+            this.style['background-color'] = buttons[this.dataset.number].click_fill;
+            (function (that) {
+            setTimeout(<span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >            that.style['background-color'] = buttons[that.dataset.number].initial_fill;</span>
+            }, 300);
+            })(this);
+            clearTimeout(gameTout);
+            <span class="missing-if-branch" title="if path not taken" >I</span>if (checking.length !== 0) { // sequence is still left.
+<span class="cstat-no" title="statement not covered" >                gameTout = setTimeout(<span class="fstat-no" title="function not covered" >function () {</span></span>
+<span class="cstat-no" title="statement not covered" >                audios[4].play();</span>
+<span class="cstat-no" title="statement not covered" >                startAgain();</span>
+                }, 5000);
+                } else { // sequence completed
+                if (document.getElementById('count_disp').value === ' 20') { // user wins when completed level 20.
+                stopGame(buttons);
+                setTimeout(<span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >                alert('Congo!!! You Have Won....Press Start to play again');</span>
+<span class="cstat-no" title="statement not covered" >                gameState = 0;</span>
+                }, 600);
+                } else {
+                buttons.forEach(function (button) {
+                    button.element.dataset.clickable = false; // setting the clickable attribute of the buttons to false during the next sequence.
+                    });
+                    startGame(audios); // start new level of n buttons with the first (n-1) buttons similar to last sequence.
+                }
+            }
+            } else {
+                audios[4].play();
+                startAgain(buttons); // shows error and starts again in the same level(non-strict) or 1st level(strict).
+            }
+        }
+    };
+    function Button (element, number) {
+    this.element = element;
+    this.initial_fill = pallete1[number];
+    this.click_fill = pallete2[number];
+    }
+&nbsp;
+    for (var i = 0; i &lt; 4; i++) {
+    audios[i] = document.getElementById('audio' + i);
+    buttons[i] = new Button(document.getElementById('button' + i), i);
+    }
+    audios[4] = document.getElementById('audio4');
+&nbsp;
+    function startAgain (buttons) { // called when the user does any error or when the timeout finishes
+            var allDisabled = false;
+            var testWhenStrict = arguments[1];
+            buttons.forEach(function (button) {
+                            button.element.dataset.clickable = false; // user cannot click the buttons when the sequence is flashing
+                            allDisabled = !(allDisabled || button.element.dataset.clickable == 'false');
+                            });
+            clearTimeout(gameTout);
+            count--;
+            document.getElementById('count_disp').value = ' ! !';
+            setTimeout(function () {
+            document.getElementById('count_disp').style.color = 'brown';
+            }, 100);
+            setTimeout(function () {
+            document.getElementById('count_disp').style.color = 'red';
+            }, 400);
+            setTimeout(function () {
+            document.getElementById('count_disp').style.color = 'brown';
+            }, 700);
+            setTimeout(function () {
+            document.getElementById('count_disp').style.color = 'red';
+            }, 1000);
+            if (document.getElementById('strict').dataset.mode == '1' || testWhenStrict == 1) { // when in strict mode,reset the initial sequence and the timeout 
+                setTimeout(function () {
+                stopGame(buttons);
+                document.getElementById('strict_indicator').style['background-color'] = 'red';
+                document.getElementById('strict').dataset.mode = 1;
+                }, 1200);
+                document.getElementById('count_disp').style.color = 'red';
+                setTimeout(function () {
+                document.getElementById('count_disp').style.color = 'brown';
+                }, 1300);
+                setTimeout(function () {
+                document.getElementById('count_disp').style.color = 'red';
+                }, 1700);
+                setTimeout(function () {
+                document.getElementById('count_disp').style.color = 'brown';
+                }, 2100);
+                setTimeout(function () {
+                document.getElementById('count_disp').style.color = 'red';
+                }, 2500);
+                setTimeout(function () {
+                startGame(audios);
+                }, 2700);
+            } else {
+                setTimeout(<span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >                startGame(audios); </span>// in non-strict mode,carry on the game with the recent sequence
+                }, 1200);
+            }
+            return {
+                  'clickable': !allDisabled,
+                  'display': document.getElementById('count_disp').value,
+                  'display-color': document.getElementById('count_disp').style.color
+            };
+    }
+&nbsp;
+    function startGame (audios, buttons) { // gets executed for every new sequence
+        var rBtnNum, // stores the random button number generated 
+        checkForAudio = arguments[2],
+        audioPlays;
+        for (var i = 0; i &lt; count; i++) {
+        if (sequence[i] == null) { // empty value at that index
+            rBtnNum = Math.floor(Math.random() * 4);
+            sequence.push(rBtnNum);
+        } else { // contains value from the previous sequence
+            rBtnNum = sequence[i];
+        }
+        (function (j, k, timeouts, checkForAudio, audioPlays) {
+            buttonFlashTimeouts[k] = setTimeout(function () {
+            <span class="missing-if-branch" title="else path not taken" >E</span>if (document.getElementById('toggle_btn').dataset.mode == 1 || checkForAudio == 1) {
+              try {
+                audios[j].play();
+                audioPlays = true;
+               } catch (e) {
+<span class="cstat-no" title="statement not covered" >                 audioPlays = false;</span>
+               }
+              document.getElementById('count_disp').value = count &gt; 9 ? <span class="branch-0 cbranch-no" title="branch not covered" >' ' + count </span>: ' 0' + count;
+              <span class="missing-if-branch" title="else path not taken" >E</span>if (k === (count - 1)) {
+                var index = 0;
+                buttons.forEach(function (button) { // setting clickable attribute of the button to true after the flashes.
+                button.element.dataset.clickable = true;
+                });
+                count++;
+                sequence.forEach(function (elem) {
+                checking[index++] = elem;
+                });
+                gameTout = setTimeout(function () { // creating timeout for a sequence.gets reseted after each correct click.
+                audios[4].play();
+                startAgain(buttons);
+                }, 5000);
+            }
+            buttons[j].element.style['background-color'] = buttons[j].click_fill;
+            setTimeout(function () {
+            buttons[j].element.style['background-color'] = buttons[j].initial_fill;
+            }, 600);
+            }
+            }, 1400 + 1500 * k); // 1200ms for the count display flash,200ms wait time after the buttons start flashing,   
+                        // 1500*k is the wait time for button in the sequence after which it flashes for 600ms(k=0 to 3).
+        })(rBtnNum, i, buttonFlashTimeouts, checkForAudio, audioPlays);
+      }
+      return {
+             'sequence': sequence,
+             'toggle_btn_mode': document.getElementById('toggle_btn').dataset.mode,
+             'audios': audios,
+             'count': count,
+             'audioPlays': audioPlays
+             };
+    }
+&nbsp;
+    function stopGame (buttons) { // called when the game finishes or the user stops the game from the stop button
+        document.getElementById('count_disp').value = ' - -';
+        document.getElementById('count_disp').style.color = 'brown';
+        sequence = [];
+        checking = [];
+        count = 1;
+        clearTimeout(gameTout);
+        buttons.forEach(function (button) {
+                        button.element.dataset.clickable = false;
+                    });
+        buttonFlashTimeouts.forEach(function (timeout) {
+        clearTimeout(timeout);
+        });
+        document.getElementById('strict_indicator').style['background-color'] = 'black';
+        document.getElementById('strict').dataset.mode = 0;
+&nbsp;
+        return {
+            display: document.getElementById('count_disp').value,
+            color: document.getElementById('count_disp').style.color,
+            count: count
+        };
+    }
+  var eventForToggleBtn = function () { // toggles ON/OFF button
+            if (document.getElementById('toggle_btn').dataset.mode === '0') {
+                document.getElementById('toggle_btn').style.float = 'right';
+                document.getElementById('toggle_btn').dataset.mode = 1;
+                document.getElementById('count_disp').style.color = 'red';
+            } else {
+                document.getElementById('toggle_btn').style.float = 'left';
+                document.getElementById('toggle_btn').dataset.mode = 0;
+                for (var i = 0; i &lt; 4; i++) {
+                 buttons[i].element = document.getElementById('button' + i);
+                }
+                stopGame(buttons);
+            }
+    };
+&nbsp;
+ var eventForStartBtn = function (gameState) { // executed when the user clicks the start button and the game starts. 
+        if (!gameState) { // checks if the start button is clicked between gameplay 
+            gameState = 1;
+            buttonFlashTimeouts.forEach(function (item) {
+                clearTimeout(item);
+            });
+            <span class="missing-if-branch" title="else path not taken" >E</span>if (document.getElementById('toggle_btn').dataset.mode == 1) { // execute only if the button start button is set to ON.
+                document.getElementById('count_disp').style.color = 'red';
+                setTimeout(function () {
+                document.getElementById('count_disp').style.color = 'brown';
+                }, 100);
+                setTimeout(function () {
+                document.getElementById('count_disp').style.color = 'red';
+                }, 400);
+                setTimeout(function () {
+                document.getElementById('count_disp').style.color = 'brown';
+                }, 700);
+                setTimeout(function () {
+                document.getElementById('count_disp').style.color = 'red';
+                }, 1000);
+                setTimeout(function () {
+                startGame();
+                }, 1200);
+            }
+        } else { // start button is pressed one or more times between game play  
+            <span class="missing-if-branch" title="else path not taken" >E</span>if (document.getElementById('toggle_btn').dataset.mode == 1) {
+                buttonFlashTimeouts.forEach(function (item) { // clears initial timeouts of the button flashes
+                clearTimeout(item);
+                });
+                countTextTimeout.forEach(function (item) { // clears initial timeouts of the count text flashes
+                clearTimeout(item);
+                });
+                for (var i = 0; i &lt; 4; i++) {
+                 buttons[i].element = document.getElementById('button' + i);
+                }
+                stopGame(buttons);
+                countTextTimeout[0] = setTimeout(function () {
+                document.getElementById('count_disp').style.color = 'brown';
+                }, 100);
+                countTextTimeout[1] = setTimeout(function () {
+                document.getElementById('count_disp').style.color = 'red';
+                }, 400);
+                countTextTimeout[2] = setTimeout(function () {
+                document.getElementById('count_disp').style.color = 'brown';
+                }, 700);
+                countTextTimeout[3] = setTimeout(function () {
+                document.getElementById('count_disp').style.color = 'red';
+                }, 1000);
+                countTextTimeout[4] = setTimeout(function () {
+                startGame();
+                }, 1200);
+            }
+        }
+    };
+&nbsp;
+  var eventForStrictBtn = function () { // toggles the strict mode.
+        <span class="missing-if-branch" title="else path not taken" >E</span>if (document.getElementById('toggle_btn').dataset.mode == 1) {
+            if (document.getElementById('strict').dataset.mode === '0') {
+                document.getElementById('strict_indicator').style['background-color'] = 'red';
+                document.getElementById('strict').dataset.mode = 1;
+            } else {
+                document.getElementById('strict_indicator').style['background-color'] = 'black';
+                document.getElementById('strict').dataset.mode = 0;
+            }
+        }
+    };
+function attachUIEvents () {
+    document.getElementById('toggle_bg').addEventListener('click', eventForToggleBtn);
+    document.getElementById('start').addEventListener('click', eventForStartBtn);
+    document.getElementById('strict').addEventListener('click', eventForStrictBtn);
+    for (var i = 0; i &lt; 4; i++) {
+      document.getElementById('button' + i).addEventListener('click', btnClick);
+    }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri Aug 04 2017 11:07:54 GMT+0530 (IST)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>
