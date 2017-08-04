@@ -1,0 +1,36 @@
+{
+  "name": "simon-game",
+  "version": "1.0.0",
+  "description": "Simon game",
+  "main": "index.js",
+  "scripts": {
+    "test": "karma start karma.conf.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rahul9046/Rahul9046.github.io.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Rahul9046/Rahul9046.github.io/issues"
+  },
+  "homepage": "https://github.com/Rahul9046/Rahul9046.github.io#readme",
+  "devDependencies": {
+    "eslint": "^4.3.0",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-node": "^5.1.1",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "istanbul": "^0.4.5",
+    "jasmine": "^2.7.0",
+    "jasmine-mockdate": "^0.1.0",
+    "karma": "^1.7.0",
+    "karma-chrome-launcher": "^2.2.0",
+    "karma-coverage": "^1.1.1",
+    "karma-jasmine": "^1.1.0",
+    "karma-phantomjs-launcher": "^1.0.4",
+    "phantom": "^4.0.5"
+  }
+}
