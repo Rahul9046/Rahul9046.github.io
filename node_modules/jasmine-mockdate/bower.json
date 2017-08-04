@@ -1,0 +1,19 @@
+{
+  "name": "jasmine-mockdate",
+  "version": "0.1.0",
+  "description": "Mock Date for legacy Jasmine v1.3",
+  "main": "jasmine-mockdate.js",
+  "keywords": [
+    "jasmine",
+    "mock",
+    "fake",
+    "date"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
